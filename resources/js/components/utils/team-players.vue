@@ -13,9 +13,9 @@
   
   <tr v-for="player in players" v-bind:key="player.id">
     <td>{{ player.first_name }} {{ player.last_name }}</td>
-    <td>{{ player.games }}</td>
-    <td>{{ player.minutes_per_game }}</td>
-    <td>{{ player.points_per_game }}</td>
+    <td>{{ player.stats.games }}</td>
+    <td>{{ player.stats.minutes_per_game }}</td>
+    <td>{{ player.stats.points_per_game }}</td>
   </tr>
   </tbody>
       </table>

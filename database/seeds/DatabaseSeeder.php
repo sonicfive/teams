@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use \App\Player as Player;
 use \App\Team as Team;
+use \App\Stats as Stats;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -12,16 +13,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Team::class, 3)->create()->each(function ($team) {
-            for($i=1; $i<=3; $i++){
-                $players[] = factory(\App\Player::class)->make();
-            }
+        factory(Team::class, 4)->create()->each(function ($team) {
+            $players = factory(Player::class, 4)->make();
             $team->players()->saveMany($players);
+            $team->players->each(function($player){
+                $player->stats()->save(factory(Stats::class)->make());
+            });
         });
     }
 
     public function down(){
         Team::truncate();
         Player::truncate();
+        Stats::truncate();
     }
 }

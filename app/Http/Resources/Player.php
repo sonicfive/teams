@@ -19,12 +19,10 @@ class Player extends JsonResource
             'first_name' => $this->first_name,
             'last_name' => $this->last_name,
             'team_id' => $this->team_id,
-            'games' => $this->games,
-            'minutes_per_game' => $this->minutes_per_game,
-            'points_per_game' => $this->points_per_game,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'team' => $this->team
+            'team' => $this->team,
+        
         ];
     }
 }

@@ -63001,11 +63001,11 @@ var render = function() {
               _vm._v(_vm._s(player.first_name) + " " + _vm._s(player.last_name))
             ]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(player.games))]),
+            _c("td", [_vm._v(_vm._s(player.stats.games))]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(player.minutes_per_game))]),
+            _c("td", [_vm._v(_vm._s(player.stats.minutes_per_game))]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(player.points_per_game))])
+            _c("td", [_vm._v(_vm._s(player.stats.points_per_game))])
           ])
         })
       )

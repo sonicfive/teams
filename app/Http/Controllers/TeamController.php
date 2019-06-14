@@ -14,11 +14,8 @@ class TeamController extends Controller
     }
 
     public function show_players($id){
-        try{
-            return new Players(Team::find($id)->players);
-        }catch(\Exception $e){
-            return collect([]);
-        }
+        
+        return new Players(Team::find($id)->players);
     }
 
     public function show_all(){

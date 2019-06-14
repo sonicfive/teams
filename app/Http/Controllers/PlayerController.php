@@ -10,7 +10,7 @@ use App\Player as Player;
 class PlayerController extends Controller
 {
     public function show($id){
-        return new PlayerResource(Player::with('team')->find($id));
+        return new PlayerResource(Player::with(['team'])->find($id));
     }
 
     public function show_all(){
